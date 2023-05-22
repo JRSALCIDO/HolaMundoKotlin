@@ -11,8 +11,11 @@ import androidx.appcompat.widget.Toolbar
 
 class MainActivity : AppCompatActivity() {
     private lateinit var btnSaludar: Button
+    private lateinit var btnFin: Button
+    private lateinit var btnLimpiar: Button
     private lateinit var txtNombre: EditText
     private lateinit var lblSaludo: TextView
+
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,6 +27,8 @@ class MainActivity : AppCompatActivity() {
 
 
         btnSaludar = findViewById(R.id.btnSaludo)
+        btnLimpiar = findViewById(R.id.btnLimpiar)
+        btnFin = findViewById(R.id.btnFin)
         txtNombre = findViewById(R.id.txtSaludo2)
         lblSaludo = findViewById(R.id.lblSaludo)
 
@@ -35,5 +40,13 @@ class MainActivity : AppCompatActivity() {
                 lblSaludo.text = "Hola $txtSaludar Como Estas ? <3"
             }
         }
+
+        btnLimpiar.setOnClickListener{
+            txtNombre.text.clear()
+        }
+        btnFin.setOnClickListener{
+            finish()
+        }
+
     }
 }
